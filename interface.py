@@ -22,6 +22,11 @@ cuadroDireccion.grid(row=3, column=1, padx=10, pady=10)
 cuadroComentarios = Text(miFrame, width=16, height=5)
 cuadroComentarios.grid(row=4, column=1, padx=10, pady=10)
 
+scrollVert = Scrollbar(miFrame, command=cuadroComentarios.yview)
+scrollVert.grid(row=4, column=2, sticky="nsew")
+
+cuadroComentarios.config(yscrollcommand=scrollVert.set)
+
 nombreLabel = Label(miFrame, text="Nombre:")
 nombreLabel.grid(row=0, column=0, sticky="w", padx=10, pady=10)
 
@@ -36,5 +41,15 @@ direccionLabel.grid(row=3, column=0, sticky="w", padx=10, pady=10)
 
 comentariosLabel = Label(miFrame, text="Comentarios:")
 comentariosLabel.grid(row=4, column=0, sticky="w", padx=10, pady=10)
+
+def funcionEnviar():
+    print("Nombre: " + cuadroNombre.get())
+    print("Contraseña: " + cuadroPass.get())
+    print("Apellido: " + cuadroApellido.get())
+    print("Dirección: " + cuadroDireccion.get())
+    print("Comentarios: " + cuadroComentarios.get("1.0", END))
+
+botonEnvio=Button(raiz, text="Enviar", command=funcionEnviar)
+botonEnvio.pack()
 
 raiz.mainloop()
