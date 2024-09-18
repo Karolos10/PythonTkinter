@@ -19,6 +19,9 @@ cuadroApellido.grid(row=2, column=1, padx=10, pady=10)
 cuadroDireccion = Entry(miFrame)
 cuadroDireccion.grid(row=3, column=1, padx=10, pady=10)
 
+cuadroComentarios = Text(miFrame, width=16, height=5)
+cuadroComentarios.grid(row=4, column=1, padx=10, pady=10)
+
 nombreLabel = Label(miFrame, text="Nombre:")
 nombreLabel.grid(row=0, column=0, sticky="w", padx=10, pady=10)
 
@@ -30,5 +33,8 @@ apellidoLabel.grid(row=2, column=0, sticky="w", padx=10, pady=10)
 
 direccionLabel = Label(miFrame, text="Dirección:")
 direccionLabel.grid(row=3, column=0, sticky="w", padx=10, pady=10)
+
+comentariosLabel = Label(miFrame, text="Comentarios:")
+comentariosLabel.grid(row=4, column=0, sticky="w", padx=10, pady=10)
 
 raiz.mainloop()
